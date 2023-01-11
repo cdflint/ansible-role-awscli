@@ -11,7 +11,8 @@
 #    - install
 
 - name: Install {{ cli_package }}
-  pip:
+  become: yes
+  dnf:
     name: "{{ cli_package }}"
     state: present
   tags:
